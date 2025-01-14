@@ -14,19 +14,6 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: mydockerhubusername/webapp:latest
+        image: mydockerhub/webapp:latest
         ports:
         - containerPort: 80
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: webapp-service
-spec:
-  selector:
-    app: webapp
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 80
-  type: ClusterIP
